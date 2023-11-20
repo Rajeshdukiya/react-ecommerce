@@ -1,4 +1,4 @@
-import React from 'react';
+import { Counter } from './features/counter/Counter.js';
 import './App.css';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
@@ -10,6 +10,8 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
+import Cart from './features/cart/Cart';
+import CartPage from './pages/CartPage';
 
 const router = createBrowserRouter([
   {
@@ -24,13 +26,16 @@ const router = createBrowserRouter([
     path: '/signup',
     element: <SignupPage></SignupPage>,
   },
+  { // only for testing - then page will be added
+    path: '/cart',
+    element: <CartPage></CartPage>,
+  },
 ]);
 
 function App() {
   return (
     <div className="App">
-    <Home></Home>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </div>
   );
 }
